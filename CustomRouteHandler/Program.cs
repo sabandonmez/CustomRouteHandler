@@ -24,6 +24,8 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints => {
 
+    endpoints.Map("image/{fileName}", new ImageHandler().Handler("wwwroot"));
+
     endpoints.Map("example-route", new ExampleHandler().Handler());
 
     endpoints.MapControllerRoute(
